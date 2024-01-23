@@ -1,0 +1,82 @@
+/* styles.css */
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    padding: 12px 0;
+    margin-bottom: 12px;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header li {
+    margin-left: 16px;
+}
+
+header a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header a:hover {
+    color: #ddd;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.message-box {
+    width: 100%;
+    height: 96px;
+    overflow-y: scroll;
+    background-color: #4a4a4a;
+    border-radius: 4px;
+}
+
+.message-box::-webkit-scrollbar {
+    display: none;
+}
+
+.message-form input[type="text"] {
+    border: 0;
+    background-color: #4a4a4a;
+    color: #ffffff;
+    padding: 8px 12px;
+    margin-right: -12px;
+    width: 100%;
+    outline: 0;
+    border-radius: 4px;
+}
+
+.message-form button {
+    border: 0;
+    background-color: #6a5acd;
+    color: #ffffff;
+    padding: 8px 12px;
+    width: 100%;
+    outline: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    width: 100%;
+    padding: 8px 0;
+    margin-top: 80px;
+}

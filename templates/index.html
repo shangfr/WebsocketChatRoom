@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+
+       /* 自定义样式 */
+        .login-container {
+            max-width: 400px;
+            margin: 150px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        /* 添加换行后的间距 */
+        .form-group {
+            margin-bottom: 20px; /* 增加底部间距 */
+        }
+        
+    .message-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Adjust alignment as needed */
+        height: 70vh; /* Set maximum height relative to viewport height */
+        background-color: #f5f5f5; /* Light background color */
+		overflow-y: auto;
+    }
+    
+    .user-message,
+    .other-message {
+        width: fit-content;
+        max-width: 80%; /* Adjust maximum width as needed */
+        padding: 8px 12px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .user-message {
+        align-self: flex-end;
+        background-color: #cce6ff;
+        margin-right: 5px;
+    }
+    
+    .other-message {
+        background-color: #e0e0e0;
+        margin-left: 5px;
+    }
+    /* 为 input 和 button 添加间距 */
+    .form-control {
+        margin-right: 1em; /* 这里可以根据需要调整间距大小 */
+    }
+    
+    #message {
+        resize: none; /* 禁止用户拖动调整textarea大小 */
+        max-height: 3em; /* 设置最大高度为3行高度 */
+        overflow-y: auto; /* 当内容超出高度时显示垂直滚动条 */
+    }
+    
+     #footer {
+        margin-bottom: auto; /* 自动边距可以确保footer位于最底部 */
+        font-size: 10px; /* 设置页脚的字体大小 */
+        min-height: 10px; /* 设置页脚的最小高度 */
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <i class="fas fa-comment-dots"></i> Chat Room
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+			<form class="form-horizontal login-container" role="form" id="room-form" >
+				<div class="form-group">
+					 <label for="room-number" class="col-sm-2 control-label">Room Number</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control"  id="room-number" placeholder="Enter your username" required>
+					</div>
+				</div>
+				<div class="form-group">
+
+					 <label for="username" class="col-sm-2 control-label">Username</label>
+                        
+						
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="username"  placeholder="Enter your password" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="checkbox">
+							 <label><input type="checkbox" />Remember me</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						 <button type="submit" class="btn btn-primary btn-block">Enter Chat Room</button>
+					</div>
+				</div>
+			</form>
+
+
+		</div>
+	</div>
+	<div class="row clearfix" style="display: none;" id="message-ct" >
+		<div class="col-md-12 column">
+        <div class="message-container" id="message-box">
+            <!-- Messages will be displayed here -->
+        </div>
+        
+        <form id="message-form" class="mt-4">
+            <div class="input-group mb-3">
+                <textarea id="message" class="form-control" placeholder="Enter your message" rows="1"></textarea>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </form>
+
+		</div>
+	</div>
+		</div>
+	</div>
+</div>
+
+    <script src="./static/scripts/main.js"></script>
+
+</body>
+</html>
